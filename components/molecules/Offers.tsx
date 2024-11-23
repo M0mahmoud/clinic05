@@ -105,8 +105,8 @@ export default function Offers() {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex -left-12 bg-white hover:bg-blue-50 border-gray-200" />
-                <CarouselNext className="hidden md:flex -right-12 bg-blue-600 hover:bg-blue-700 text-white" />
+                <CarouselPrevious className="-left-3" />
+                <CarouselNext className="-right-3" />
             </Carousel>
         </section>
     );

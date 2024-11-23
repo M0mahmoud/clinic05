@@ -42,6 +42,12 @@ const partners: Partner[] = [
         description: "وصف الCompany 5",
     },
     {
+        id: 53,
+        name: "Company 5",
+        logo: "/media/user/2.png",
+        description: "وصف الCompany 5",
+    },
+    {
         id: 6,
         name: "Company 6",
         logo: "/media/user/2.png",
@@ -78,7 +84,7 @@ export function PartnersSection() {
                                 />
                             </button>
                         </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px] bg-white rounded-sm">
+                        <DialogContent className="sm:max-w-[425px] bg-white sm:rounded">
                             <div className="text-center">
                                 <DialogTitle>{partner.name}</DialogTitle>
                                 <div className="w-32 h-32 mx-auto relative mb-4">

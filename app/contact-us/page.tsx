@@ -35,7 +35,7 @@ const ContactUs = () => {
             </section>
 
             <section className="bg-[#f8f8f8]">
-                <div className="lg:grid lg:min-h-screen px-8 lg:grid-cols-12">
+                <div className="lg:grid lg:min-h-screen px-8 lg:grid-cols-12 gap-6">
                     <section
                         data-aos="fade-right"
                         data-aos-duration="5000"
@@ -79,7 +79,7 @@ const ContactUs = () => {
                                     <Input
                                         name="name"
                                         placeholder="Name"
-                                        className="h-full flex w-full min-h-[48px] lg:h-12 rounded-[8px] pl-10 text-sm ring-offset-background placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5"
+                                        className="h-full flex w-full min-h-[48px] lg:h-12 rounded-[8px] pl-11 text-sm ring-offset-background placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5"
                                     />
                                 </div>
                                 <div className="relative w-full">
@@ -87,7 +87,7 @@ const ContactUs = () => {
                                     <Input
                                         name="email"
                                         placeholder="Email"
-                                        className="h-full flex w-full min-h-[48px] lg:h-12 rounded-[8px] pl-10 text-sm ring-offset-background placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5"
+                                        className="h-full flex w-full min-h-[48px] lg:h-12 rounded-[8px] pl-11 text-sm ring-offset-background placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5"
                                     />
                                 </div>
                                 <div className="relative w-full">
@@ -95,7 +95,7 @@ const ContactUs = () => {
                                     <Input
                                         name="phone"
                                         placeholder="Phone (optional)"
-                                        className="h-full flex w-full min-h-[48px] lg:h-12 rounded-[8px] pl-10 text-sm ring-offset-background placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5"
+                                        className="h-full flex w-full min-h-[48px] lg:h-12 rounded-[8px] pl-11 text-sm ring-offset-background placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5"
                                     />
                                 </div>
                                 <div className="relative w-full">
@@ -103,7 +103,7 @@ const ContactUs = () => {
                                     <Textarea
                                         name="message"
                                         placeholder="Write your message"
-                                        className="placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5 "
+                                        className="placeholder:text-[#BCBCBC] bg-white placeholder:font-medium outline-0 border-none pe-5 pl-11 rounded-[8px]"
                                     />
                                 </div>
                                 <button

@@ -155,13 +155,12 @@ export default function AvilableTime() {
             </div>
             <div className="   sm:ms-11 p-1 sm:p-6">
                 {/* Morning Time Section */}
-                <div className="flex items-center justify-start gap-4">
+                <div className="flex items-center justify-center gap-4 flex-col sm:flex-row mb-4">
                     <div className=" flex items-center justify-around gap-2">
                         <Sun className="text-yellow-500" />
-
                         <span>Morning</span>
                     </div>
-                    <div className="my-4 flex items-center gap-4 overflow-auto">
+                    <div className="my-4 flex items-center gap-2 justify-center flex-wrap">
                         {MoriningTime.map((time) => (
                             <span
                                 className="rounded-sm border border-maintitle px-6 py-2"
@@ -174,13 +173,13 @@ export default function AvilableTime() {
                 </div>
 
                 {/* Evening Time Section */}
-                <div className="flex items-center justify-start gap-4">
+                <div className="flex items-center justify-center gap-4 flex-col sm:flex-row">
                     <div className="ms-2 flex items-center justify-around gap-2">
                         <Moon className="text-zinc-600" />
 
                         <span>Evening</span>
                     </div>
-                    <div className="my-6 flex items-center gap-4 overflow-auto">
+                    <div className="my-6 flex items-center gap-2 justify-center flex-wrap">
                         {eveningTime.map((time) => (
                             <span
                                 className="rounded-sm border border-maintitle px-6 py-2"

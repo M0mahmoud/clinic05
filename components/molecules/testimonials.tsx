@@ -83,8 +83,8 @@ export default function Testimonials() {
                         />
                     ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="left-0" />
+                <CarouselNext className="right-0" />
             </Carousel>
         </main>
     );
@@ -92,7 +92,7 @@ export default function Testimonials() {
 
 function TestimonialCard({ opinion }: { opinion: Doctor }) {
     return (
-        <CarouselItem className="basis-1/2">
+        <CarouselItem className="md:basis-1/2">
             <blockquote className="rounded-sm bg-white p-6 shadow-sm sm:p-8">
                 <div className="flex items-center gap-4">
                     <Image

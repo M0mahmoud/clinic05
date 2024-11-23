@@ -1,5 +1,6 @@
 "use client";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 import React from "react";
 import {
     Carousel,
@@ -17,42 +18,46 @@ export default function HeroSection() {
         { id: 2, src: "/media/Doctors/background1.jpg" },
         { id: 3, src: "/media/Doctors/7.png" },
     ];
+
+    const autoplayOptions = {
+        delay: 5000,
+        stopOnInteraction: true,
+        rootNode: (emblaRoot: HTMLElement) => emblaRoot.parentElement,
+    };
     return (
         <main className="relative">
             <section className="w-full overflow-hidden">
                 <Carousel
-                    plugins={[
-                        Autoplay({
-                            delay: 2000,
-                        }),
-                    ]}
+                    plugins={[Autoplay(autoplayOptions)]}
                     opts={{
                         loop: true,
+                        align: "start",
                     }}
                     className="w-full relative"
                 >
-                    <CarouselContent>
+                    <CarouselContent className="ml-0">
                         {IMAGES.map((image, index) => (
-                            <CarouselItem key={index}>
-                                <div
-                                    className="h-[65vh]  md:h-[80vh] w-full bg-cover bg-center relative"
-                                    style={{
-                                        backgroundImage: `url(${image.src})`,
-                                    }}
-                                >
-                                    <div className="absolute w-full h-full inset-0 liner"></div>
-
-                                    <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-                                        <div className="max-w-xl text-left ltr:sm:text-left rtl:sm:text-right">
-                                            <h1 className="text-2xl font-extrabold text-white sm:text-3xl">
-                                                We are here to support your
-                                                <span className=" font-extrabold text-main ">
-                                                    {" "}
+                            <CarouselItem key={image.id} className="pl-0">
+                                <div className="relative h-[65vh] md:h-[80vh] w-full">
+                                    <Image
+                                        src={image.src}
+                                        alt={`Slide ${index + 1}`}
+                                        fill
+                                        priority={index === 0}
+                                        className="object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40" />{" "}
+                                    {/* Overlay */}
+                                    <div className="absolute inset-0 mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-full lg:items-center lg:px-8">
+                                        <div className="max-w-xl text-left">
+                                            <h1 className="text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+                                                We are here to support your{" "}
+                                                <span className="text-blue-500">
                                                     health
                                                 </span>
                                             </h1>
 
-                                            <p className="mt-4 max-w-lg text-white sm:text-xl/relaxed mb-2">
+                                            <p className="mt-4 max-w-lg text-white/90 text-lg sm:text-xl/relaxed mb-8">
                                                 Lorem ipsum dolor sit amet
                                                 consectetur, adipisicing elit.
                                                 Nesciunt illo tenetur fuga
@@ -60,17 +65,18 @@ export default function HeroSection() {
                                             </p>
 
                                             <AuthButtons
-                                                btn_1={"Available"}
-                                                btn_2={"Book now"}
+                                                btn_1="Available"
+                                                btn_2="Book now"
                                             />
                                         </div>
                                     </div>
                                 </div>
                             </CarouselItem>
                         ))}
-                        <CarouselNext />
-                        <CarouselPrevious />
                     </CarouselContent>
+
+                    <CarouselPrevious className="h-8 w-8 rounded-full left-0" />
+                    <CarouselNext className="h-8 w-8 rounded-full right-0" />
                 </Carousel>
             </section>
 

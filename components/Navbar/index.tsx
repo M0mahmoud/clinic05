@@ -3,19 +3,17 @@
 import { Menu } from "lucide-react";
 import Link from "next/link";
 
+import { useAuth } from "@/context/auth/AuthProvider";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import AuthButtons from "../molecules/AuthButtons";
+import { MenuUser } from "../molecules/MenuUser";
 import Sidebar from "./Sidebar";
-
-// import MenuUser from "../molecules/MenuUser";
-// import { useAuth } from "@/context/auth/AuthProvider";
 
 export default function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
-    const pathname = usePathname(); // Get the current route
-    console.log("🚀 ~ Header ~ pathname:", pathname);
+    const pathname = usePathname();
 
     const navLink = [
         { id: 1, link: "Home", href: "/" },
@@ -23,6 +21,8 @@ export default function Header() {
         { id: 4, link: "Contact Us", href: "/contact-us" },
         { id: 5, link: "Blog", href: "/blog" },
     ];
+
+    const auth = useAuth();
 
     return (
         <header className="bg-white w-full">
@@ -63,17 +63,11 @@ export default function Header() {
 
                         {/* Auth Buttons or User Menu */}
                         <div className="hidden md:flex items-center gap-4">
-                            {
-                                // user?.id ? (
-                                !false ? (
-                                    "MenuUser"
-                                ) : (
-                                    <AuthButtons
-                                        btn_1="Login"
-                                        btn_2="Sign Up"
-                                    />
-                                )
-                            }
+                            {auth && auth.user?.id ? (
+                                <MenuUser />
+                            ) : (
+                                <AuthButtons btn_1="Login" btn_2="Sign Up" />
+                            )}
                         </div>
 
                         {/* Hamburger Icon for Mobile */}
