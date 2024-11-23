@@ -1,5 +1,7 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Navbar";
 import ReactQueryProvider from "@/components/providers/ReactQuery";
-import { ThemeProvider } from "@/components/providers/theme";
+// import { ThemeProvider } from "@/components/providers/theme";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
@@ -34,17 +36,21 @@ export default async function RootLayout({
                 suppressHydrationWarning
                 className={` ${geistMono.variable} antialiased`}
             >
-                <ThemeProvider
+                {/* <ThemeProvider
                     attribute="class"
                     defaultTheme="light"
                     enableSystem
                     disableTransitionOnChange
-                >
-                    <NextIntlClientProvider messages={messages}>
-                        <Toaster />
-                        <ReactQueryProvider>{children}</ReactQueryProvider>
-                    </NextIntlClientProvider>
-                </ThemeProvider>
+                > */}
+                <NextIntlClientProvider messages={messages}>
+                    <Toaster />
+                    <ReactQueryProvider>
+                        <Header />
+                        {children}
+                        <Footer />
+                    </ReactQueryProvider>
+                </NextIntlClientProvider>
+                {/* </ThemeProvider> */}
             </body>
         </html>
     );

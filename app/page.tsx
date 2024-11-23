@@ -1,23 +1,24 @@
-import { useTranslations } from "next-intl";
+import AvilableTime from "@/components/molecules/AvilableTime";
+import Gallery from "@/components/molecules/Gallery";
+import HeroSection from "@/components/molecules/HeroSection";
+import Offers from "@/components/molecules/Offers";
+import { PartnersSection } from "@/components/molecules/Partners";
+import Services from "@/components/molecules/Services";
+import Testimonials from "@/components/molecules/testimonials";
 
 export default function Home() {
-    const t = useTranslations("navbar");
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                <h1>Setup Project</h1>
-                <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-                    <li className="mb-2">{t("home")}</li>
-                    <li className="mb-2">
-                        Get started by editing{" "}
-                        <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                            app/page.tsx
-                        </code>
-                        .
-                    </li>
-                    <li>Save and see your changes instantly.</li>
-                </ol>
-            </main>
-        </div>
+        <main>
+            <HeroSection />
+            <div className="px-3 sm:px-32">
+                <AvilableTime />
+                <PartnersSection/>
+                <Services />
+                <Offers />
+                
+                <Testimonials />
+                <Gallery />
+            </div>
+        </main>
     );
 }
