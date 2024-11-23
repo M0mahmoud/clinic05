@@ -124,7 +124,7 @@ export default function AvilableTime() {
                         {times.map((time, index) => (
                             <CarouselItem
                                 key={index}
-                                className="basis-full sm:basis-1/2 md:basis-1/4"
+                                className="basis-1/2 md:basis-1/4"
                             >
                                 <div className="flex py-2">
                                     <div className="flex flex-col rounded-[5px] p-[5px] text-center shadow-custom w-full">

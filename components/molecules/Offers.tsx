@@ -55,7 +55,7 @@ const offers: OfferCard[] = [
 export default function Offers() {
     return (
         <section className="container mx-auto px-4 py-8">
-            <h2 className="text-3xl font-bold text-center mb-8">Offers</h2>
+            <h2 className="text-3xl font-bold mb-4 text-start">Our Offers</h2>
             <Carousel
                 opts={{
                     align: "start",
@@ -105,8 +105,10 @@ export default function Offers() {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="-left-3" />
-                <CarouselNext className="-right-3" />
+                <div className="absolute -top-8 right-0 flex gap-4">
+                    <CarouselPrevious className="-left-20" />
+                    <CarouselNext className="right-0" />
+                </div>
             </Carousel>
         </section>
     );
